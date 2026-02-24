@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+
+    <style>
+        body {
+            background-color: #fff8dc; /* cream */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            color: #555;
+        }
+
+        hr {
+            width: 80%;
+            border: 1px solid #ddd;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #219150;
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #1d6fa5;
+        }
+
+        .total {
+            font-size: 22px;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+
+<body>
+
+<center>
+    <h1>Expense Tracker</h1>
+    <p>Track your daily expenses</p>
+</center>
+
+<hr>
+
+<center>
+<form>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th colspan="2">Add Expense</th>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="date"></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <select>
+                    <option>Food</option>
+                    <option>Transport</option>
+                    <option>Shopping</option>
+                    <option>Bills</option>
+                    <option>Others</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Amount</td>
+            <td><input type="number"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Add Expense">
+            </td>
+        </tr>
+    </table>
+</form>
+</center>
+
+<br>
+<hr>
+
+<center>
+<h2>Expense History</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>01-02-2026</td>
+        <td>Food</td>
+        <td>₹250</td>
+        <td>Lunch</td>
+    </tr>
+    <tr>
+        <td>02-02-2026</td>
+        <td>Transport</td>
+        <td>₹100</td>
+        <td>Bus Fare</td>
+    </tr>
+</table>
+</center>
+
+<br>
+<hr>
+
+<center>
+<h3>Total Expense</h3>
+<p class="total"><b>₹350</b></p>
+</center>
+
+<br>
+
+<center>
+<a href="#top">Go to Top</a> |
+<a href="https://www.google.com" target="_blank">Help</a>
+</center>
+
+</body>
+</html>
