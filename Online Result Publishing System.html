@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Result Publishing System</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: #eef2f3;
+    }
+    h1 {
+        text-align: center;
+        color: #1a5276;
+    }
+    form, table {
+        width: 80%;
+        margin: auto;
+        background: #fff;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+    input {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 10px 0;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background: #ddd;
+    }
+    button {
+        padding: 5px 10px;
+    }
+</style>
+
+<script>
+function publishResult() {
+
+    var regno = document.getElementById("regno").value;
+    var name = document.getElementById("name").value;
+    var subject = document.getElementById("subject").value;
+    var marks = document.getElementById("marks").value;
+
+    if (regno === "" || name === "" || subject === "" || marks === "") {
+        alert("All fields are required!");
+        return false;
+    }
+
+    var table = document.getElementById("resultTable");
+    var row = table.insertRow(-1);
+
+    row.insertCell(0).innerHTML = regno;
+    row.insertCell(1).innerHTML = name;
+    row.insertCell(2).innerHTML = subject;
+    row.insertCell(3).innerHTML = marks;
+    row.insertCell(4).innerHTML =
+        "<button onclick='deleteRow(this)'>Delete</button>";
+
+    document.getElementById("resultForm").reset();
+    return false;
+}
+
+function deleteRow(btn) {
+    var row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>Online Result Publishing System</h1>
+
+<form id="resultForm" onsubmit="return publishResult()">
+    <h3>Publish Result</h3>
+
+    Register Number:
+    <input type="text" id="regno">
+
+    Student Name:
+    <input type="text" id="name">
+
+    Subject:
+    <input type="text" id="subject">
+
+    Marks:
+    <input type="number" id="marks">
+
+    <input type="submit" value="Publish Result">
+</form>
+
+<table id="resultTable">
+    <tr>
+        <th>Register No</th>
+        <th>Name</th>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+</body>
+</html>
