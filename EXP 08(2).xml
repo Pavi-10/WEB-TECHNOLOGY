@@ -1,28 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
 
-    <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.FontColorApp"
-        tools:targetApi="31">
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="32sp"
+        android:gravity="end"
+        android:padding="16dp"
+        android:background="#EEEEEE" />
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:layout_marginTop="16dp">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <!-- Number Buttons -->
+        <Button android:id="@+id/btn0" android:text="0" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn1" android:text="1" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn2" android:text="2" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn3" android:text="3" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn4" android:text="4" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn5" android:text="5" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn6" android:text="6" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn7" android:text="7" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn8" android:text="8" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btn9" android:text="9" style="@style/CalcButtonStyle" />
 
-        </activity>
-    </application>
+        <!-- Operators -->
+        <Button android:id="@+id/btnAdd" android:text="+" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btnSubtract" android:text="-" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btnMultiply" android:text="*" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btnDivide" android:text="/" style="@style/CalcButtonStyle" />
 
-</manifest>
+        <!-- Special Buttons -->
+        <Button android:id="@+id/btnClear" android:text="C" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btnEquals" android:text="=" style="@style/CalcButtonStyle" />
+        <Button android:id="@+id/btnDot" android:text="." style="@style/CalcButtonStyle" />
+    </GridLayout>
+</LinearLayout>
